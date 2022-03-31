@@ -11,6 +11,7 @@ import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
+import com.github.mikephil.charting.formatter.DefaultValueFormatter
 
 class PieChartActivity : AppCompatActivity() {
     lateinit var pieChart: PieChart
@@ -59,6 +60,8 @@ class PieChartActivity : AppCompatActivity() {
         pieDataSet!!.valueTextSize = 12f
         pieDataSet!!.valueTextColor = Color.WHITE
         pieDataSet!!.colors = colorsForPieChart
+        pieDataSet!!.valueFormatter = DefaultValueFormatter(0)
+
         pieChart.centerText = label
         pieChart.setCenterTextSize(16f)
         pieChart.setCenterTextColor(Color.BLUE)
